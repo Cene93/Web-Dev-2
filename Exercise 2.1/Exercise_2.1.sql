@@ -20,13 +20,25 @@ SELECT Genre.Name, COUNT(*) as Tracks FROM Track
 	GROUP BY Track.GenreId
 	ORDER BY Tracks DESC
 	
-SELECT FirstName, LastName, Total FROM Customer
+SELECT FirstName, LastName, SUM(Total) as sum FROM Customer
 	JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
 	GROUP BY Total
-	ORDER BY Total DESC
+	ORDER BY sum DESC
 	
 SELECT Track.Name, InvoiceId FROM InvoiceLine
 	JOIN Track ON Track.TrackId = InvoiceLine.TrackId
 	
 
-	
+
+	///////////////////////////
+    
+    
+
+SELECT * FROM Invoice
+   WHERE Total = (SELECT  MAX(Total) FROM Invoice)
+
+
+SELECT BillingCity, COUNT(*) FROM Invoice
+    GROUP BY BillingCity 
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
