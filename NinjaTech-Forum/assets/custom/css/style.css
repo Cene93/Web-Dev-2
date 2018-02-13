@@ -1,3 +1,30 @@
-body {
-    background-color: red;
+.post {
+    margin: 20px 0;
+}
+
+.post-content {
+    background-color: #eee;
+    padding: 10px;
+    margin: 0;
+}
+
+.post-title {
+    background-color: #ccc;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+h6, h3 { margin: 0;}
+h6 { padding-left: 10px; }
+
+#home .post .post-content .summary {
+    height: 20px;
+    overflow: hidden;
+    margin: 0;
+}
+
+#home .post .post-content .summary p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

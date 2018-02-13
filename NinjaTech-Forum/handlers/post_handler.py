@@ -16,4 +16,4 @@ class AddPostHandler(BaseHandler):
                         user_email=email)
 
         new_post.put()
-        return self.write('Post added')
+        return self.redirect_to('main-page')
