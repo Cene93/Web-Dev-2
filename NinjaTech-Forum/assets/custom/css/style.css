@@ -1,5 +1,13 @@
+.navbar {
+    margin: 0;
+}
+
+.container-fluid.name {
+    padding: 0;
+}
+
 .post {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .post-content {
@@ -15,7 +23,12 @@
 }
 
 h6, h3 { margin: 0;}
-h6 { padding-left: 10px; }
+
+#home .jumbotron {
+    margin-bottom: 0;
+}
+
+#home h6 { padding-left: 10px; }
 
 #home .post .post-content .summary {
     height: 20px;
@@ -27,4 +40,8 @@ h6 { padding-left: 10px; }
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#newPost {
+    padding-left: 20px;
 }

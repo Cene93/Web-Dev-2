@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="post">
-    <div class="post-title">
-        <h1>{{ post.title }}</h1>
-        <h6>{{ post.user_email }} - {{ post.time_posted }}</h6>
-    </div>
-    <div class="post-content">
-        <p>{{ post.content }}</p>
-    </div>
-</div>
-<a href="/">Go Back</a>
+<div class="container">
+    <div class="post">
+        <div class="post-title">
+            <h1>{{ post.title }}</h1>
+            <h6>{{ post.user_email }} - {{ post.time_posted.strftime('%d.%m.%y %H:%M') }}</h6>
+        </div> <!-- .post-title -->
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div> <!-- .post-content -->
+    </div> <!-- .post -->
+    <a href="/">Go Back</a>
+</div> <!-- .container -->
 {% endblock %}

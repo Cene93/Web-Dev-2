@@ -2,25 +2,32 @@
 
 {% block content %}
 <div id="home">
-    <div class="jumbotron">
-        <h1>Ninja Tech Forum</h1>
-        <p>Welcome to Ninja Tech Forum</p>
-    </div>
-    <br>
-    <h1>Posts</h1>
+    <div class="container-fluid name">
+        <div class="jumbotron">
+            <h1>Ninja Tech Forum</h1>
+            <p>Welcome to Ninja Tech Forum</p>
+        </div> <!-- .jumbotron -->
+    </div> <!-- .container-fluid .name -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>Posts</h1>
 
-    {% for post in posts %}
-    <div class="post">
-        <div class="post-title">
-            <a href="/r/{{ post.key.id() }}"><h3>{{ post.title }}</h3></a>
-            <h6>{{ post.user_email }} - {{ post.time_posted }}</h6>
-        </div>
-        <div class="post-content">
-            <div class="summary">{{ post.content }}</div>
-        </div>
-    </div>
-    {% endfor %}
-
-</div>
+                {% for post in posts %}
+                <div class="post">
+                    <div class="post-title">
+                        <a href="/r/{{ post.key.id() }}"><h3>{{ post.title }}</h3></a>
+                        <h6>{{ post.user_email }} - {{ post.time_posted.strftime('%d.%m.%y %H:%M') }}</h6>
+                    </div> <!-- .post-title -->
+                    <div class="post-content">
+                        <div class="summary">{{ post.content }}</div>
+                    </div> <!-- .post-content -->
+                </div> <!-- .post -->
+                {% endfor %}
+            </div> <!-- .col-md-8 -->
+            <div class="col.md-3"></div>
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+</div> <!-- #home -->
 
 {% endblock %}
