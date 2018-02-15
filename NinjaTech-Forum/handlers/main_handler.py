@@ -4,7 +4,7 @@ from models.models import Post
 
 class MainHandler(BaseHandler):
     def get(self):
-        posts = Post.query(Post.deleted == False).fetch()
+        posts = Post.query(Post.deleted == False).order(-Post.time_posted).fetch()
         params = {
             'posts': posts
         }

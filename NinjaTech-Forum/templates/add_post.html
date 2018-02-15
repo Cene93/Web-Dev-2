@@ -18,6 +18,8 @@
                     <textarea name="text" class="form-control" rows="20" required></textarea>
                 </div>
 
+                <input name="csrf-token" value="{{ csrf_token }}" hidden>
+
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </div> <!-- .col-md-6 -->
