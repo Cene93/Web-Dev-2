@@ -8,6 +8,7 @@
 
 .post {
     margin: 10px 0;
+    box-shadow: 0 0 5px #333;
 }
 
 .post-content {
@@ -45,3 +46,43 @@ h6, h3 { margin: 0;}
 #newPost {
     padding-left: 20px;
 }
+
+.comments {
+    margin-top: 50px;
+    border: 1px solid #eee;
+    padding: 1px;
+}
+
+.comment {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-meta {
+    background: #eee;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+.comment-meta h5 {
+    font-size: 0.9em;
+}
+
+.comment-content {
+    padding: 5px 20px;
+    margin: 0;
+}
+
+.comment h5, .comment p {
+    margin: 0;
+}
+
+.add-comment {
+    margin-top: 20px;
+}
+
+.comments h4 {
+    margin: 20px 0 20px;
+}
+

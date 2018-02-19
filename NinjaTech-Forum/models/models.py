@@ -11,7 +11,7 @@ class Post(ndb.Model):
 
 
 class Comment(ndb.Model):
-    postID = ndb.StringProperty()
+    postID = ndb.IntegerProperty()
     content = ndb.TextProperty()
     user_email = ndb.StringProperty()
     time_posted = ndb.DateTimeProperty(auto_now_add=True)
