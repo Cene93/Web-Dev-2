@@ -33,6 +33,7 @@
               <ul class="nav navbar-nav navbar-right">
 
                   {% if user %}
+                  <li><a href="">{{ user.email() }}</a></li>
                     <li><a href="/add-post">Add New Post</a></li>
                     <li><a href="{{ url_logout }}">Logout</a></li>
 

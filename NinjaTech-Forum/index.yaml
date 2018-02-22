@@ -14,12 +14,12 @@ indexes:
   properties:
   - name: postID
   - name: time_posted
-    direction: desc
 
 - kind: Comment
   properties:
   - name: postID
   - name: time_posted
+    direction: desc
 
 - kind: Post
   properties:

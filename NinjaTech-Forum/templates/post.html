@@ -5,6 +5,9 @@
     <div class="post">
         <div class="post-title">
             <h1>{{ post.title }}</h1>
+            {% if admin %}
+            <a class="delete" href="/r/{{ post.key.id() }}/delete">Delete</a>
+            {% endif %}
             <h6>{{ post.user_email }} - {{ post.time_posted.strftime('%d.%m.%y %H:%M') }}</h6>
         </div> <!-- .post-title -->
         <div class="post-content">
