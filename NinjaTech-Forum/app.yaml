@@ -9,6 +9,14 @@ handlers:
 - url: .*
   script: main.app
 
+- url: /task/*
+  script: main.app
+  login: admin
+
+- url: /cron/*
+  script: main.app
+  login: admin
+
 libraries:
 - name: webapp2
   version: latest

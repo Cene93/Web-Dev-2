@@ -1,0 +1,5 @@
+cron:
+- description: Final removal of posts every week
+  url: /cron/delete-posts
+  schedule: every sunday 03:00
+  timezone: Europe/Ljubljana

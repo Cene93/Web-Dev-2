@@ -1,10 +1,11 @@
 from handlers.base import BaseHandler
 from models.models import Post, Comment
-from google.appengine.api import users
+from google.appengine.api import users, memcache
+import cgi
 
 
 class PostHandler(BaseHandler):
-    def get(self, post_id,):
+    def get(self, post_id):
         post = Post.get_by_id(int(post_id))
         comments = Comment.query(Comment.postID == post.key.id()).order(-Comment.time_posted).fetch()
         admin = users.is_current_user_admin()
@@ -27,5 +28,16 @@ class PostHandler(BaseHandler):
         }
         return self.render_template('post.html', params=params)
 
+    def post(self, post_id):
+        value_csrf = self.request.get('csrf-token')
+
+        if not memcache.get(value_csrf):
+            return self.write('CSRF Attack Detected!')
+
+        post = Post.get_by_id(int(post_id))
+        content = cgi.escape(self.request.get('comment'))
+        Comment.save_comment(post_id, content)
+
+        return self.redirect_to('post', post_id=post.key.id())
 
 

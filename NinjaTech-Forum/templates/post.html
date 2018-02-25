@@ -32,7 +32,7 @@
 
         {% if user %}
         <div class="add-comment">
-            <form action="/r/{{post.key.id()}}/new-comment" method="post">
+            <form method="post">
                 <div class="form-group">
                     <label>Comment</label>
                     <textarea name="comment" class="form-control" rows="5" required></textarea>

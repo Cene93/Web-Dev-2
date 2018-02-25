@@ -26,3 +26,8 @@ indexes:
   - name: deleted
   - name: time_posted
     direction: desc
+
+- kind: Post
+  properties:
+  - name: deleted
+  - name: time_updated
