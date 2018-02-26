@@ -11,7 +11,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
+
+                {% if user %}
+                <div class="subscribe">
+                    {% if subscribe %}
+                    <form action="/subscribe" method="post">
+                        <button class="btn btn-danger">UNSUBSCRIBE</button>
+                    </form>
+                    {% else %}
+                    <form action="/subscribe" method="post">
+                        <button class="btn btn-info">SUBSCRIBE</button>
+                    </form>
+                    {% endif %}
+                </div><!-- .subscribe -->
+                {% endif %}
+
+                <p>You have subscribed: {{ subscribe }}</p>
+
+                <p>{{ subs }}</p>
+
                 <h1>Posts</h1>
+
+                <p>{{ ss }}</p>
 
                 {% for post in posts %}
                 <div class="post">

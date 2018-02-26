@@ -36,3 +36,7 @@ class Comment(ndb.Model):
                           'comment_email': email
                       })
 
+
+class Users(ndb.Model):
+    user_email = ndb.StringProperty()
+    subscribe = ndb.BooleanProperty(default=False)

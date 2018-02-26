@@ -9,7 +9,7 @@ from handlers.main_handler import MainHandler
 from handlers.cookie_handler import CookieHandler
 from handlers.post_handler import AddPostHandler
 from handlers.single_post_handler import PostHandler
-
+from handlers.subscribe_handler import SubscribeHandler
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler, name="main-page"),
@@ -20,4 +20,5 @@ app = webapp2.WSGIApplication([
     webapp2.Route('/cron/delete-posts', DeletePostCron),
     webapp2.Route('/cron/delete-comments', DeleteCommentCron),
     webapp2.Route('/r/<post_id:\d+>/delete-comment', DeleteCommentHandler),
+    webapp2.Route('/subscribe', SubscribeHandler),
 ], debug=True)

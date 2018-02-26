@@ -16,7 +16,16 @@
     </div> <!-- .post -->
     <a href="/">Go Back</a>
 
+    <div class="subscribe">
+        {% if subscribe %}
+        <a class="btn btn-danger" href="/subscribe">UNSUBSCRIBE</a>
+        {% else %}
+        <a class="btn btn-info" href="/subscribe">SUBSCRIBE</a>
+        {% endif %}
+    </div><!-- .subscribe -->
+
     <div class="comments">
+
         <h3>Comments</h3>
         {% for comment in comments %}
         <div class="comment">
