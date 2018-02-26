@@ -4,10 +4,11 @@ from google.appengine.api import users, memcache
 import cgi
 
 
+
 class PostHandler(BaseHandler):
     def get(self, post_id):
         post = Post.get_by_id(int(post_id))
-        comments = Comment.query(Comment.postID == post.key.id()).order(-Comment.time_posted).fetch()
+        comments = Comment.query(Comment.postID == post.key.id(), Comment.deleted == False).order(-Comment.time_posted).fetch()
         admin = users.is_current_user_admin()
         author = post.user_email
         user = users.get_current_user()
@@ -15,16 +16,13 @@ class PostHandler(BaseHandler):
 
         if user:
             email = user.email()
-            if email == author:
-                admin = True
-
 
         params = {
             'post': post,
             'comments': comments,
             'admin': admin,
             'author': author,
-            'email': email
+            'email': email,
         }
         return self.render_template('post.html', params=params)
 

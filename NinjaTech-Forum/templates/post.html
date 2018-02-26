@@ -5,7 +5,7 @@
     <div class="post">
         <div class="post-title">
             <h1>{{ post.title }}</h1>
-            {% if admin %}
+            {% if admin or email == author %}
             <a class="delete" href="/r/{{ post.key.id() }}/delete">Delete</a>
             {% endif %}
             <h6>{{ post.user_email }} - {{ post.time_posted.strftime('%d.%m.%y %H:%M') }}</h6>
@@ -16,13 +16,15 @@
     </div> <!-- .post -->
     <a href="/">Go Back</a>
 
-
     <div class="comments">
         <h3>Comments</h3>
         {% for comment in comments %}
         <div class="comment">
             <div class="comment-meta">
                 <h5>{{ comment.user_email }}</h5>
+                {% if comment.user_email == email or admin %}
+                <a class="delete-comment" href="/r/{{ post.key.id() }}/delete-comment">Delete</a>
+                {% endif %}
             </div>
             <div class="comment-content">
                 <p>{{ comment.content }}</p>

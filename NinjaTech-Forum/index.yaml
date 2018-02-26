@@ -12,6 +12,13 @@ indexes:
 
 - kind: Comment
   properties:
+  - name: deleted
+  - name: postID
+  - name: time_posted
+    direction: desc
+
+- kind: Comment
+  properties:
   - name: postID
   - name: time_posted
 
